@@ -12,16 +12,12 @@ Each project highlights different aspects of **data visualization, modeling, and
 - Focused on **interactive visuals** and slicers to make data exploration intuitive.  
 - Emphasized clean layouts, consistent color themes, and data accuracy.
 
----
-
 ## Featured Projects
 
 | Project | Description |
 |----------|--------------|
 | **Global NOC Revenue Insights Dashboard** | Visualizes National Oil Company revenue trends (2011–2023) and fiscal dependence patterns using Power BI. |
 | **Sales Performance Dashboard** | Tracks product revenue, profit, and regional sales metrics with dynamic slicers and KPI cards. |
-
----
 
 ## Tools & Technologies
 
@@ -38,4 +34,4 @@ Each project highlights different aspects of **data visualization, modeling, and
 - Creating dynamic reports with slicers and buttons  
 - Enhancing data storytelling with layout and color design  
 
-** Ikenna Anasieze**
+#Ikenna Anasieze
