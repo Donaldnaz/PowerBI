@@ -39,6 +39,3 @@ Each project highlights different aspects of **data visualization, modeling, and
 - Enhancing data storytelling with layout and color design  
 
 ** Ikenna Anasieze**  
-
-If you find these projects useful, feel free to **star this repository** or connect with me on LinkedIn!
-
