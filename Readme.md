@@ -33,25 +33,23 @@ The goal is to create a **Power BI dashboard** that turns complex NOC revenue da
     - Adjusted column names
         
 <img width="2000" height="1181" alt="image" src="https://github.com/user-attachments/assets/63dca1ed-8264-4325-b5b6-4c3a4d5508f8" />
-        
+        `
     - Replaced nulls with zeros & added a YearSUM column
         
-<img width="2048" height="1180" alt="image" src="https://github.com/user-attachments/assets/33323beb-1a96-4d85-a9df-be83307ee8b7" />
-        
+<img with="2048" height="1180" alt="image" src="https://github.com/user-attachments/assets/33323beb-1a96-4d85-a9df-be83307ee8b7" />
+            
+### **Data Modelling in Power BI**
     
-    ### **Data Modelling in Power BI**
-    
-    - Created relationships between **Company Information → Country → Region** tables for cross-filtering.
+   - Created relationships between **Company Information → Country → Region** tables for cross-filtering.
         
 <img width="1852" height="887" alt="image" src="https://github.com/user-attachments/assets/1185a2ac-f2a2-482d-a8f7-63f9d5fd82df" />
         
-        Defined calculated metrics using **DAX**:
+  - Defined calculated metrics using **DAX**:
         
         - `Total Revenue = SUM(Revenue)`
         - `Year-over-Year Growth = ([This Year Revenue] - [Last Year Revenue]) / [Last Year Revenue] * 100`
         - `Revenue Rank = RANKX(ALL(Region), [Total Revenue])`
         - `Revenue Rank = RANKX(ALL(Company), [Total Revenue])`
-     
 
 ### **Dashboard Design**
 
@@ -87,25 +85,11 @@ The goal is to create a **Power BI dashboard** that turns complex NOC revenue da
 - Published dashboard to **Power BI Service** for interactive exploration.
 - Documented visuals, insights, and methodology in Github.
   
-## Featured Projects
+### Outcomes
 
-| Project | Description |
-|----------|--------------|
-| **Global NOC Revenue Insights Dashboard** | Visualizes National Oil Company revenue trends (2011–2023) and fiscal dependence patterns using Power BI. |
-| **xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx** | Tracks product revenue, profit, and regional sales metrics with dynamic slicers and KPI cards. |
-
-## Tools & Technologies
-
-- **Power BI Desktop**
-- **DAX (Data Analysis Expressions)**
-- **Power Query (ETL & Data Cleaning)**
-- **Excel / CSV / Public Datasets**
-
-## Key Learning Areas
-
-- Data modeling and relationship management  
-- Building custom measures and KPIs  
-- Creating dynamic reports with slicers and buttons  
-- Enhancing data storytelling with layout and color design  
+- Interactive global dashboard tracking NOC revenue trends (2011–2023).
+- Benchmarked government fiscal dependence on NOC income.
+- Highlighted top-performing companies and most volatile revenue regions.
+- Strengthened Power BI skills in **data modelling, DAX, KPI design, and geo-visualization**.
 
 ### By Ikenna Anasieze
