@@ -32,18 +32,18 @@ The goal is to create a **Power BI dashboard** that turns complex NOC revenue da
 - Cleaned data in **Power Query**:
     - Adjusted column names
         
-        ![Screenshot 2025-11-14 at 9.36.45 PM.png](attachment:b22f6cd1-ff32-4a20-973c-a9b2910f5865:64915871-bf47-4fd3-8879-578d222df173.png)
+<img width="2000" height="1181" alt="image" src="https://github.com/user-attachments/assets/63dca1ed-8264-4325-b5b6-4c3a4d5508f8" />
         
     - Replaced nulls with zeros & added a YearSUM column
         
-        ![Screenshot 2025-11-14 at 10.20.31 PM.png](attachment:23b2679b-4b30-4b35-81a4-a4e70673e574:Screenshot_2025-11-14_at_10.20.31_PM.png)
+<img width="2048" height="1180" alt="image" src="https://github.com/user-attachments/assets/33323beb-1a96-4d85-a9df-be83307ee8b7" />
         
     
     ### **Data Modelling in Power BI**
     
     - Created relationships between **Company Information → Country → Region** tables for cross-filtering.
         
-        ![Screenshot 2025-12-12 at 10.18.03 PM.png](attachment:464e4bf2-0765-4a3c-9f44-447cb1a4f2fd:46b47437-53f8-4f5e-9caf-5619bfcdd9d8.png)
+<img width="1852" height="887" alt="image" src="https://github.com/user-attachments/assets/1185a2ac-f2a2-482d-a8f7-63f9d5fd82df" />
         
         Defined calculated metrics using **DAX**:
         
@@ -59,18 +59,33 @@ The goal is to create a **Power BI dashboard** that turns complex NOC revenue da
 
 1. **Global Overview** – KPI cards showing Total Revenue and Highest Earning NOC.
     
-    ![Screenshot 2025-12-13 at 2.08.33 AM.png](attachment:e17e3bfa-9c15-460c-897d-46e4e53135bb:Screenshot_2025-12-13_at_2.08.33_AM.png)
+<img width="2048" height="977" alt="image" src="https://github.com/user-attachments/assets/e02156fc-bab8-487d-a733-907ab2579c2e" />
     
 2. **Regional Performance** – Map showing aggregated revenues by region.
     
-    ![Screenshot 2025-12-13 at 2.08.54 AM.png](attachment:0c2b5195-c2b7-4af8-9f2a-9d4031129292:Screenshot_2025-12-13_at_2.08.54_AM.png)
+<img width="2048" height="1158" alt="image" src="https://github.com/user-attachments/assets/bd67b842-3031-43d6-b8d1-95571a373752" />
     
 3. **Top Performers** – Pie chart comparing Top 10 NOCs by annual revenue.
     
-    ![Screenshot 2025-12-13 at 2.09.12 AM.png](attachment:10b3cc00-d40c-4e49-9aaf-89c2d936fcf9:Screenshot_2025-12-13_at_2.09.12_AM.png)
+<img width="2048" height="1073" alt="image" src="https://github.com/user-attachments/assets/a53a98f6-e35c-467f-84db-87dac5be5b48" />
     
 4. **Fiscal Dependence** – Line + column chart showing NOC revenue vs government revenue over time.
 5. **Interactive Filters** – Region, Year, Peer Group, and Company slicers for exploration.
+
+
+### **Analysis & Insights**
+
+- Identified which NOCs consistently dominate global revenue (e.g., Saudi Aramco, KPC, Pemex).
+- Highlighted regions with **high fiscal dependence**, such as the Middle East and Sub-Saharan Africa.
+- Observed how **oil price shocks (2014, 2020)** impact overall NOC earnings.
+- Showed differences between **commercially driven vs. state-controlled NOCs** in growth trends.
+
+### **Validation & Reporting**
+
+- Cross-referenced key revenue figures with public financial statements (e.g., Aramco Annual Reports).
+- Validated ratios with World Bank’s public finance data for selected countries.
+- Published dashboard to **Power BI Service** for interactive exploration.
+- Documented visuals, insights, and methodology in Github.
   
 ## Featured Projects
 
