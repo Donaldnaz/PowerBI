@@ -49,7 +49,7 @@ The goal is to create a **Power BI dashboard** that turns complex NOC revenue da
 
 **Dashboard Pages & Visuals:**
 
-1. **Global Overview** – KPI cards showing Total Revenue and Highest Earning NOC.
+1. **Global Overview** – KPI cards showing Total Revenue and Highest Earning NOC of Top 5.
     
 <img width="2048" height="977" alt="image" src="https://github.com/user-attachments/assets/e02156fc-bab8-487d-a733-907ab2579c2e" />
     
