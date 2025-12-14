@@ -25,10 +25,7 @@ The goal is to create a **Power BI dashboard** that turns complex NOC revenue da
 
 ### **Data Collection & Cleaning**
 
-- Downloaded dataset from the NOC page.
-    
-    [NRGI-NOCdatabase-ExploreByIndicator.xlsx](attachment:70ba6ddf-4e73-4f22-93ce-bed6773705a5:NRGI-NOCdatabase-ExploreByIndicator.xlsx)
-    
+- Downloaded dataset from the NOC page.    
 - Cleaned data in **Power Query**:
     - Adjusted column names
         
