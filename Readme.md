@@ -38,7 +38,7 @@ The goal is to create a **Power BI dashboard** that turns complex NOC revenue da
    - Created relationships between **Company Information → Country → Region** tables for cross-filtering.
         
 <img width="1852" height="887" alt="image" src="https://github.com/user-attachments/assets/1185a2ac-f2a2-482d-a8f7-63f9d5fd82df" />      
-  - Defined calculated metrics using **DAX**:
+  - Defined calculated metrics using *DAX*:
         
         - Total Revenue = SUM(Revenue)
         - Year-over-Year Growth = ([This Year Revenue] - [Last Year Revenue]) / [Last Year Revenue] * 100
