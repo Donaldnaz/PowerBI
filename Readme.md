@@ -23,8 +23,6 @@ The goal is to create a **Power BI dashboard** that turns complex NOC revenue da
     - NOC Revenues as % of General Government Revenues
     - Peer Group, Region, Year, Company
 
-### Set Up
-
 ### **Data Collection & Cleaning**
 
 - Downloaded dataset from the NOC page.
