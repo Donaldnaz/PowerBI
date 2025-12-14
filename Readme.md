@@ -68,13 +68,12 @@ The goal is to create a **Power BI dashboard** that turns complex NOC revenue da
 
 - Identified which NOCs consistently dominate global revenue (e.g., Saudi Aramco, KPC, Pemex).
 - Highlighted regions with **high fiscal dependence**, such as the Middle East and Sub-Saharan Africa.
-- Observed how **oil price shocks (2014, 2020)** impact overall NOC earnings.
+- Observed how **oil price shocks (2020)** impact overall NOC earnings.
 - Showed differences between **commercially driven vs. state-controlled NOCs** in growth trends.
 
 ### **Validation & Reporting**
 
 - Cross-referenced key revenue figures with public financial statements (e.g., Aramco Annual Reports).
-- Validated ratios with World Bank’s public finance data for selected countries.
 - Published dashboard to **Power BI Service** for interactive exploration.
 - Documented visuals, insights, and methodology in Github.
   
