@@ -17,7 +17,7 @@ Each project highlights different aspects of **data visualization, modeling, and
 | Project | Description |
 |----------|--------------|
 | **Global NOC Revenue Insights Dashboard** | Visualizes National Oil Company revenue trends (2011–2023) and fiscal dependence patterns using Power BI. |
-| **Sales Performance Dashboard** | Tracks product revenue, profit, and regional sales metrics with dynamic slicers and KPI cards. |
+| **xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx** | Tracks product revenue, profit, and regional sales metrics with dynamic slicers and KPI cards. |
 
 ## Tools & Technologies
 
