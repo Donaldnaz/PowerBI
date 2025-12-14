@@ -25,7 +25,6 @@ Each project highlights different aspects of **data visualization, modeling, and
 - **DAX (Data Analysis Expressions)**
 - **Power Query (ETL & Data Cleaning)**
 - **Excel / CSV / Public Datasets**
-- **GitHub for version control and project documentation**
 
 ## Key Learning Areas
 
