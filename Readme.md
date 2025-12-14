@@ -46,10 +46,10 @@ The goal is to create a **Power BI dashboard** that turns complex NOC revenue da
         
   - Defined calculated metrics using **DAX**:
         
-        - `Total Revenue = SUM(Revenue)`
-        - `Year-over-Year Growth = ([This Year Revenue] - [Last Year Revenue]) / [Last Year Revenue] * 100`
-        - `Revenue Rank = RANKX(ALL(Region), [Total Revenue])`
-        - `Revenue Rank = RANKX(ALL(Company), [Total Revenue])`
+        - Total Revenue = SUM(Revenue)
+        - Year-over-Year Growth = ([This Year Revenue] - [Last Year Revenue]) / [Last Year Revenue] * 100
+        - Revenue Rank = RANKX(ALL(Region), [Total Revenue])
+        - Revenue Rank = RANKX(ALL(Company), [Total Revenue])
 
 ### **Dashboard Design**
 
@@ -69,7 +69,6 @@ The goal is to create a **Power BI dashboard** that turns complex NOC revenue da
     
 4. **Fiscal Dependence** – Line + column chart showing NOC revenue vs government revenue over time.
 5. **Interactive Filters** – Region, Year, Peer Group, and Company slicers for exploration.
-
 
 ### **Analysis & Insights**
 
