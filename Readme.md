@@ -33,17 +33,14 @@ The goal is to create a **Power BI dashboard** that turns complex NOC revenue da
     - Adjusted column names
         
 <img width="2000" height="1181" alt="image" src="https://github.com/user-attachments/assets/63dca1ed-8264-4325-b5b6-4c3a4d5508f8" />
-        `
     - Replaced nulls with zeros & added a YearSUM column
         
 <img with="2048" height="1180" alt="image" src="https://github.com/user-attachments/assets/33323beb-1a96-4d85-a9df-be83307ee8b7" />
             
-### **Data Modelling in Power BI**
-    
+### **Data Modelling in Power BI** 
    - Created relationships between **Company Information → Country → Region** tables for cross-filtering.
         
-<img width="1852" height="887" alt="image" src="https://github.com/user-attachments/assets/1185a2ac-f2a2-482d-a8f7-63f9d5fd82df" />
-        
+<img width="1852" height="887" alt="image" src="https://github.com/user-attachments/assets/1185a2ac-f2a2-482d-a8f7-63f9d5fd82df" />      
   - Defined calculated metrics using **DAX**:
         
         - Total Revenue = SUM(Revenue)
