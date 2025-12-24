@@ -37,7 +37,7 @@ gcloud sql instances create flights \
   --cpu=2 \
   --memory=8GiB \
   --region=us-central1 \
-  --root-password=Password
+  --root-password="Your secure password"
 ```
 
 ### 2. ETL Pipeline Development
@@ -51,7 +51,7 @@ gcloud sql instances create flights \
 # Automated data staging
 
 export PROJECT_ID=$(gcloud info --format='value(config.project)')
-export BUCKET=${PROJECT_ID}-Ik
+export BUCKET=${PROJECT_ID}-flight-data
 gsutil cp create_table.sql gs://$BUCKET/create_table.sql
 ```
 
