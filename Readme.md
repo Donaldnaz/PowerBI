@@ -21,7 +21,7 @@ Cloud Storage (CSV) → Cloud SQL (PostgreSQL) → SQL Analytics → Business In
 ```
 sql/
 ├── create_table.sql    # Database schema definition
-├── 201501.csv          # Sample flight data
+├── 201501.csv.zip          # Sample flight data
 ├── Guide.pdf           # Setup guide
 └── README.md           # Project documentation
 ```
