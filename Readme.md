@@ -20,10 +20,10 @@ Cloud Storage (CSV) → Cloud SQL (PostgreSQL) → SQL Analytics → Business In
 ### Project Structure
 ```
 sql/
-├── create_table.sql
-├── 201501.csv
-├── Guide.pdf
-└── README.md
+├── create_table.sql    # Database schema definition
+├── 201501.csv          # Sample flight data
+├── Guide.pdf           # Setup guide
+└── README.md           # Project documentation
 ```
 
 ## Key Features & Implementations
