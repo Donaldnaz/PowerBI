@@ -1,36 +1,3 @@
-# Power BI Projects
+A comprehensive data analysis workflow leveraging SQL, BigQuery, Power BI, Excel, and Amazon QuickSight to extract, transform, analyze, and visualize data for actionable insights.
 
-This repository showcases my collection of **Power BI projects**, where I transform raw data into interactive dashboards and analytical insights.  
-Each project highlights different aspects of **data visualization, modeling, and storytelling**, built from real-world datasets across multiple domains.
-
----
-
-## Overview
-
-- Designed dashboards that turn data into clear, actionable insights.  
-- Applied **DAX measures**
-- Focused on **interactive visuals** and slicers to make data exploration intuitive.  
-- Emphasized clean layouts, consistent color themes, and data accuracy.
-
-## Featured Projects
-
-| Project | Description |
-|----------|--------------|
-| **Global NOC Revenue Insights Dashboard** | Visualizes National Oil Company revenue trends (2011–2023) and fiscal dependence patterns using Power BI. |
-| **xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx** | Tracks product revenue, profit, and regional sales metrics with dynamic slicers and KPI cards. |
-
-## Tools & Technologies
-
-- **Power BI Desktop**
-- **DAX (Data Analysis Expressions)**
-- **Power Query (ETL & Data Cleaning)**
-- **Excel / CSV / Public Datasets**
-
-## Key Learning Areas
-
-- Data modeling and relationship management  
-- Building custom measures and KPIs  
-- Creating dynamic reports with slicers and buttons  
-- Enhancing data storytelling with layout and color design  
-
-### By Ikenna Anasieze
+This repository contains scripts, dashboards, and documentation for end-to-end data analysis projects—from raw data to interactive reports.
