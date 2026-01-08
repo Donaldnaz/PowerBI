@@ -30,7 +30,6 @@ def run():
         'fields': [
             {'name': 'well_id', 'type': 'STRING'},
             {'name': 'temperature', 'type': 'FLOAT'},
-            {'name': 'timestamp', 'type': 'TIMESTAMP'}
         ]
     }
     
