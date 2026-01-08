@@ -1,17 +1,15 @@
-# Real Time Oilfield Telemetry Streaming into BigQuery
+# Real Time Oilfield Sensor Data Streaming into BigQuery
 
 **Author:** Anasieze Ikenna  
 **Role:** Cloud & AI Engineer  
 **Platform:** Google Cloud Platform  
 
 ---
-
 ## Project Overview
 
 A real time data pipeline that streams live oilfield sensor readings from wells and production facilities into BigQuery, enabling continuous monitoring and analytics of field conditions.
 
 This system replaces batch uploads with live data ingestion, supporting modern digital oilfield operations and data driven decision making.
-
 ---
 
 ## Problem Statement
@@ -26,14 +24,12 @@ A newly formed development team needed a cloud native solution to:
 **My responsibility:**  I designed and implemented the end to end streaming telemetry pipeline using Google Cloud managed services.
 
 ---
-
 ## Tech Stack
 
 - **Cloud Storage** – temporary and staging storage for Dataflow job execution 
 - **Pub/Sub** – real time ingestion of oilfield telemetry events  
 - **Dataflow** – continuous stream processing of sensor data  
 - **BigQuery** – analytics storage for querying and validation
-
 
 ## Architecture Overview
 
