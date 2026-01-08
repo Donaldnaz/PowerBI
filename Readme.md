@@ -119,6 +119,7 @@ bq mk \
   injection_well:STRING,\
   co2_injection_temperature_f:FLOAT,\
   co2_injection_pressure_psi:FLOAT,\
+  co2_injection_rate_tpd":FLOAT,\
   timestamp:TIMESTAMP
 ```
 
