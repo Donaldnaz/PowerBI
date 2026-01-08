@@ -40,7 +40,7 @@ def run():
         (
             pipeline
             | "Read from Pub/Sub" >> ReadFromPubSub(
-                topic="projects/PROJECT_ID/topics/oilfield-sensor-topic"
+                topic="projects/PROJECT_ID/topics/ccs-telemetry-topic"
             )
             | "Parse JSON" >> beam.ParDo(ParseJson())
             | "Write to BigQuery" >> WriteToBigQuery(
