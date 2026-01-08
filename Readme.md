@@ -149,9 +149,8 @@ Wait until the job status is **Running**.
 
 ```bash
 gcloud pubsub topics publish $TOPIC_NAME \
-  --message='{"data": "73.4 F"}'
+ --message='{"well_id": "WELL_12A", "temperature": 73.4}'
 ```
-
 ---
 
 ### Validate in BigQuery
