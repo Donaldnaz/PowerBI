@@ -115,7 +115,11 @@ Create table:
 bq mk \
   --table \
   $DATASET_NAME.$TABLE_NAME \
-  data:STRING
+  storage_site:STRING,\
+  injection_well:STRING,\
+  co2_injection_temperature_f:FLOAT,\
+  co2_injection_pressure_psi:FLOAT,\
+  timestamp:TIMESTAMP
 ```
 
 ---
@@ -152,8 +156,10 @@ gcloud pubsub topics publish $TOPIC_NAME \
     "storage_site": "Hibernia_CCS",
     "injection_well": "INJ_03",
     "co2_injection_temperature_f": 121.4,
-    "co2_injection_pressure_psi": 2950
+    "co2_injection_pressure_psi": 2950,
+    "timestamp": "2026-01-08T15:20:00Z"
   }'
+
 ```
 ---
 
