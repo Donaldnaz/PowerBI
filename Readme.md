@@ -1,4 +1,4 @@
-# Real Time Carbon Storage Monitoring with BigQuery
+# Real Time Carbon Storage Monitoring Pipeline with BigQuery
 
 **Author:** Anasieze Ikenna  
 **Role:** Cloud & AI Engineer  
