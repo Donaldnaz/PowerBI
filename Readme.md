@@ -1,4 +1,4 @@
-# Real Time Oilfield Sensor Data Streaming into BigQuery
+# Real Time Carbon Storage Monitoring with BigQuery
 
 **Author:** Anasieze Ikenna  
 **Role:** Cloud & AI Engineer  
@@ -8,31 +8,30 @@
 
 ## Project Overview
 
-A real time data pipeline that streams live oilfield sensor readings from wells and production facilities into BigQuery, enabling continuous monitoring and analytics of field conditions.
+A real time Carbon Capture and Storage (CCS) telemetry pipeline that streams live sensor readings from CO₂ injection wells and surface facilities into BigQuery, enabling continuous monitoring and analytics of injection conditions.
 
-This system replaces batch uploads with live data ingestion, supporting modern digital oilfield operations and data driven decision making.
+This system replaces batch uploads with live telemetry ingestion, supporting modern CCS operations such as injection monitoring, integrity assurance, and data driven decision making for safe long term CO₂ storage.
 
 ---
-
 ## Problem Statement
 
-A newly formed development team needed a cloud native solution to:
+A newly formed CCS operations team required a cloud native solution to:
 
-- Ingest real time oilfield sensor data from wells and surface facilities  
-- Process continuous telemetry streams reliably at scale  
-- Store data in an analytics ready warehouse for operational insights  
-- Validate incoming field data as it arrives  
+- Ingest real time telemetry from CO₂ injection wells and surface facilities
+- Process continuous pressure and temperature streams reliably at scale
+- Store telemetry in an analytics ready warehouse for operational insight
+- Validate incoming field data as it arrives
 
-**My responsibility:**  I designed and implemented the end to end streaming telemetry pipeline using Google Cloud managed services.
+My responsibility: I designed and implemented the end to end CCS telemetry streaming pipeline using Google Cloud managed services.
 
 ---
 
 ## Tech Stack
 
 - **Cloud Storage** – temporary and staging storage for Dataflow job execution 
-- **Pub/Sub** – real time ingestion of oilfield telemetry events  
-- **Dataflow** – continuous stream processing of sensor data  
-- **BigQuery** – analytics storage for querying and validation
+- **Pub/Sub** – real time ingestion of CCS telemetry events
+- **Dataflow** – continuous stream processing of injection data
+- **BigQuery** – analytics storage for querying, validation, and reporting
 
 ## Architecture Overview
 
@@ -40,13 +39,13 @@ A newly formed development team needed a cloud native solution to:
 
 ### Data Flow
 
-1. Oilfield sensors publish sensor data (e.g., temperature readings) as JSON events  
-2. Pub/Sub ingests sensor messages in real time  
+1. CO₂ injection well sensors publish telemetry (e.g., pressure and temperature) as JSON events
+2. Pub/Sub ingests telemetry messages in real time  
 3. Dataflow processes and streams telemetry continuously  
 4. BigQuery stores processed records for analytics and reporting  
 5. SQL queries validate incoming data and support operational analysis
 
-This architecture is **serverless**, **scalable**, and **production aligned**.
+This architecture is serverless, scalable, and aligned with modern CCS monitoring systems.
 
 ---
 
@@ -74,10 +73,10 @@ PROJECT_ID=<your-project-id>
 REGION=us-central1
 
 BUCKET_NAME=$PROJECT_ID
-DATASET_NAME=oilfield_telemetry
-TABLE_NAME=well_temperature_readings
-TOPIC_NAME=oilfield-sensor-topic
-DATAFLOW_JOB_NAME=oilfield-telemetry-stream
+DATASET_NAME=ccs_monitoring
+TABLE_NAME=co2_injection_telemetry
+TOPIC_NAME=ccs-telemetry-topic
+DATAFLOW_JOB_NAME=ccs-monitoring-stream
 ````
 ---
 
@@ -149,16 +148,22 @@ Wait until the job status is **Running**.
 
 ```bash
 gcloud pubsub topics publish $TOPIC_NAME \
- --message='{"well_id": "WELL_12A", "temperature": 73.4}'
+ --message='{"oil_field": "Hibernia", "well_id": "P_15", "temperature": 115.5}'
 ```
 ---
 
 ### Validate in BigQuery
 
 ```sql
-SELECT *
-FROM `PROJECT_ID.oilfield_telemetry.well_temperature_readings`
-LIMIT 50;
+SELECT
+  injection_well,
+  co2_injection_temperature_f,
+  co2_injection_pressure_psi,
+  timestamp
+FROM `PROJECT_ID.ccs_monitoring.co2_injection_telemetry`
+WHERE injection_well = 'P_15'
+ORDER BY timestamp DESC
+LIMIT 10;
 ```
 
 Replace `PROJECT_ID` with your actual project ID.
@@ -177,10 +182,10 @@ If data does not appear in BigQuery:
 ---
 
 ## Outcome
+* A fully operational real time CCS monitoring pipeline
+* Live CO₂ injection telemetry streaming continuously from Pub/Sub into BigQuery
+* A reproducible, cloud native architecture suitable for carbon storage monitoring, operational oversight, and regulatory analysis
 
-* A fully operational real time oilfield telemetry streaming pipeline
-* Live sensor data flowing continuously from Pub/Sub into BigQuery
-* A reproducible, cloud native architecture suitable for digital oilfield analytics
 ---
 
-This project demonstrates how real time oilfield telemetry can be ingested, processed, and analyzed using cloud native streaming pipelines, enabling modern oil and gas operations to gain faster operational insights and improve decision making.
+This project demonstrates how real time CCS telemetry pipeline on Google Cloud streams live injection well data into BigQuery for continuous monitoring, analytics, and operational insight, combining oil and gas domain knowledge with cloud native data engineering.
