@@ -15,12 +15,12 @@ This system replaces batch uploads with live telemetry ingestion, supporting mod
 ---
 ## Problem Statement
 
-A newly formed CCS operations team required a cloud native solution to:
+Oil field engineers supporting CCS operations needed a solution to:
 
-- Ingest real time telemetry from CO₂ injection wells and surface facilities
-- Process continuous pressure and temperature streams reliably at scale
-- Store telemetry in an analytics ready warehouse for operational insight
-- Validate incoming field data as it arrives
++	Ingest real time sensor data from CO₂ injection wells
++	Process continuous pressure and temperature data reliably at scale
++	Store CCS sensor data in an analytics ready data warehouse
++	Validate incoming field data as it arrives
 
 My responsibility: I designed and implemented the end to end CCS telemetry streaming pipeline using Google Cloud managed services.
 
@@ -39,7 +39,7 @@ My responsibility: I designed and implemented the end to end CCS telemetry strea
 
 ### Data Flow
 
-1. CO₂ injection well sensors publish telemetry (e.g., pressure and temperature) as JSON events
+1. CO₂ injection well sensors publish telemetry (e.g., pressure, rate and temperature) as JSON events
 2. Pub/Sub ingests telemetry messages in real time  
 3. Dataflow processes and streams telemetry continuously  
 4. BigQuery stores processed records for analytics and reporting  
@@ -157,6 +157,7 @@ gcloud pubsub topics publish $TOPIC_NAME \
     "injection_well": "INJ_03",
     "co2_injection_temperature_f": 121.4,
     "co2_injection_pressure_psi": 2950,
+    "co2_injection_rate_tpd": 1800,
     "timestamp": "2026-01-08T15:20:00Z"
   }'
 
@@ -170,11 +171,12 @@ SELECT
   injection_well,
   co2_injection_temperature_f,
   co2_injection_pressure_psi,
+  co2_injection_rate_tpd,
   timestamp
 FROM `PROJECT_ID.ccs_monitoring.co2_injection_telemetry`
 WHERE injection_well = 'INJ_03'
 ORDER BY timestamp DESC
-LIMIT 10;
+LIMIT 100;
 ```
 
 Replace `PROJECT_ID` with your actual project ID.
