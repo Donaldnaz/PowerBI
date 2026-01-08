@@ -28,6 +28,7 @@ def run():
     # BigQuery schema
     schema = {
         'fields': [
+            {'name': 'oil_field', 'type': 'STRING'},
             {'name': 'well_id', 'type': 'STRING'},
             {'name': 'temperature', 'type': 'FLOAT'},
         ]
