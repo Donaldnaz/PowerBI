@@ -165,19 +165,13 @@ gcloud pubsub topics publish $TOPIC_NAME \
 ```
 ---
 
-### Validate in BigQuery
+### Validate in BigQuery - Detect high pressure events
 
 ```sql
-SELECT
-  injection_well,
-  co2_injection_temperature_f,
-  co2_injection_pressure_psi,
-  co2_injection_rate_tpd,
-  timestamp
+SELECT *
 FROM `PROJECT_ID.ccs_monitoring.co2_injection_telemetry`
-WHERE injection_well = 'INJ_03'
-ORDER BY timestamp DESC
-LIMIT 100;
+WHERE co2_injection_pressure_psi > 3200;
+
 ```
 
 Replace `PROJECT_ID` with your actual project ID.
