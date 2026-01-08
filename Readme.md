@@ -107,7 +107,7 @@ gsutil mkdir gs://$BUCKET_NAME/temp
 
 ### Create BigQuery Dataset and Table
 
-Create dataset in US multi region:
+Create dataset:
 
 ```bash
 bq mk --location=US $DATASET_NAME
