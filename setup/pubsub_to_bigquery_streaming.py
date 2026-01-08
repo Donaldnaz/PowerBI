@@ -1,5 +1,5 @@
 """
-Real Time CCS Telemetry Streaming into BigQuery
+Real Time Carbon Storage Monitoring Pipeline into BigQuery
 
 This Dataflow pipeline ingests live Carbon Capture and Storage (CCS)
 telemetry such as CO₂ injection temperature and pressure from Pub/Sub,
@@ -36,6 +36,7 @@ def run():
             {"name": "injection_well", "type": "STRING"},
             {"name": "co2_injection_temperature_f", "type": "FLOAT"},
             {"name": "co2_injection_pressure_psi", "type": "FLOAT"},
+            {"name": "co2_injection_rate_tpd", "type": "FLOAT"},
             {"name": "timestamp", "type": "TIMESTAMP"},
         ]
     }
