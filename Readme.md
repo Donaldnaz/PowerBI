@@ -1,108 +1,193 @@
-# Cloud SQL Data Pipeline & Analytics Project
+# Real Time Streaming Analytics into BigQuery
 
-Enterprise-grade data engineering project demonstrating cloud-native database management, ETL pipeline development, and SQL analytics using Google Cloud Platform. Built a scalable data infrastructure to analyze 300,000+ flight records from the US Bureau of Transportation Statistics.
+**Author:** Anasieze Ikenna  
+**Role:** Cloud & AI Engineer  
+**Platform:** Google Cloud Platform  
 
-## Technical Stack
+---
 
-- Google Cloud Platform (GCP)
-- Cloud SQL (PostgreSQL 13)
-- Cloud Storage
-- Cloud Shell
+## Project Overview
 
-## Architecture
+This project demonstrates the design and deployment of a **real time streaming analytics pipeline** on Google Cloud. The system ingests live environmental sensor data, processes it continuously, and stores it in **BigQuery** for immediate querying and analysis.
 
-```
-Cloud Storage (CSV) → Cloud SQL (PostgreSQL) → SQL Analytics → Business Insights
-         ↓                      ↓                    ↓
-    ETL Pipeline         Data Warehouse         Dashboards
-```
+Instead of relying on batch jobs or manual uploads, this architecture enables **continuous data flow**, making it suitable for use cases such as IoT sensors, monitoring systems, and real time analytics dashboards.
 
-### Project Structure
-```
-sql/
-├── create_table.sql    # Database schema definition
-├── 201501.csv.zip          # Sample flight data
-├── Guide.pdf           # Setup guide
-└── README.md           # Project documentation
-```
+---
 
-## Key Features & Implementations
+## Problem Statement
 
-### 1. Cloud Infrastructure Setup
+A newly formed development team required a solution to:
+
+- Ingest real time temperature data from sensors  
+- Process streaming events reliably at scale  
+- Store data in an analytics ready warehouse  
+- Validate incoming data instantly  
+
+**My responsibility:**  
+I designed and implemented the end to end streaming pipeline using Google Cloud managed services.
+
+---
+
+## Tech Stack
+
+- **Cloud Storage** – temporary and staging storage for Dataflow jobs  
+- **Pub/Sub** – real time event ingestion  
+- **Dataflow** – continuous stream processing  
+- **BigQuery** – analytics storage and validation  
+
+---
+
+## Architecture Overview
+
+<img width="10665" height="1831" alt="image" src="https://github.com/user-attachments/assets/65d4bbc9-661c-44be-b606-9db80921ce5a" />
+
+### Data Flow
+
+1. Environmental sensor data is published as JSON events  
+2. Pub/Sub ingests messages in real time  
+3. Dataflow processes the streaming events continuously  
+4. BigQuery stores processed records for analytics  
+5. SQL queries validate and analyze incoming data  
+
+This architecture is **serverless**, **scalable**, and **production aligned**.
+
+---
+
+## Reproduce This Project
+
+### Prerequisites
+
+- Google Cloud project with billing enabled  
+- IAM roles:
+  - Pub/Sub Admin  
+  - Dataflow Admin  
+  - BigQuery Admin  
+  - Storage Admin  
+- APIs enabled:
+  - Pub/Sub  
+  - Dataflow  
+  - BigQuery  
+  - Cloud Storage
+  - 
+---
+
+### Configuration Variables
+
 ```bash
-# Automated Cloud SQL provisioning with optimized configuration
+PROJECT_ID=<your-project-id>
+REGION=us-central1
 
-gcloud sql instances create flights \
-  --database-version=POSTGRES_13 \
-  --cpu=2 \
-  --memory=8GiB \
-  --region=us-central1 \
-  --root-password="Your secure password"
-```
+BUCKET_NAME=$PROJECT_ID
+DATASET_NAME=sensor_streaming
+TABLE_NAME=temperature_readings
+TOPIC_NAME=sensor-temperature-topic
+DATAFLOW_JOB_NAME=pubsub-to-bigquery-stream
+````
+---
 
-### 2. ETL Pipeline Development
-
-**Data Import Process:**
-- Extracted CSV data from Cloud Storage buckets
-- Transformed data to match relational schema
-- Loaded 300K+ records into PostgreSQL
+### Enable Required APIs
 
 ```bash
-# Automated data staging
-
-export PROJECT_ID=$(gcloud info --format='value(config.project)')
-export BUCKET=${PROJECT_ID}-flight-data
-gsutil cp create_table.sql gs://$BUCKET/create_table.sql
+gcloud services enable \
+  pubsub.googleapis.com \
+  dataflow.googleapis.com \
+  bigquery.googleapis.com \
+  storage.googleapis.com
 ```
 
-### 3. Database Design & Optimization
+---
 
-**Schema Implementation:**
+### Create Cloud Storage Bucket
+
+```bash
+gsutil mb -l $REGION gs://$BUCKET_NAME
+gsutil mkdir gs://$BUCKET_NAME/temp
+```
+
+---
+
+### Create BigQuery Dataset and Table
+
+Create dataset in US multi region:
+
+```bash
+bq mk --location=US $DATASET_NAME
+```
+
+Create table:
+
+```bash
+bq mk \
+  --table \
+  $DATASET_NAME.$TABLE_NAME \
+  data:STRING
+```
+
+---
+
+### Create Pub/Sub Topic
+
+```bash
+gcloud pubsub topics create $TOPIC_NAME
+```
+
+---
+
+### Run Dataflow Streaming Pipeline
+
+```bash
+gcloud dataflow jobs run $DATAFLOW_JOB_NAME \
+  --gcs-location gs://dataflow-templates-$REGION/latest/PubSub_to_BigQuery \
+  --region $REGION \
+  --parameters \
+inputTopic=projects/$PROJECT_ID/topics/$TOPIC_NAME,\
+outputTableSpec=$PROJECT_ID:$DATASET_NAME.$TABLE_NAME,\
+tempLocation=gs://$BUCKET_NAME/temp
+```
+
+Wait until the job status is **Running**.
+
+---
+
+### Publish Test Message
+
+```bash
+gcloud pubsub topics publish $TOPIC_NAME \
+  --message='{"data": "73.4 F"}'
+```
+
+---
+
+### Validate in BigQuery
+
 ```sql
--- Created optimized table structure for flight data
-CREATE TABLE flights (
-  "Year" TEXT,
-  "Quarter" TEXT,
-  "Month" TEXT,
-  -- Additional columns...
-);
+SELECT *
+FROM `PROJECT_ID.sensor_streaming.temperature_readings`
+LIMIT 50;
 ```
 
-### 4. Advanced SQL Analytics
+Replace `PROJECT_ID` with your actual project ID.
 
-**Business Intelligence Query - Top 5 Busiest Airports:**
-```sql
-SELECT "Origin", 
-       COUNT(*) AS num_flights
-FROM flights 
-GROUP BY "Origin"
-ORDER BY num_flights DESC
-LIMIT 5;
-```
+---
 
-## Analytics Output
+## Troubleshooting
 
-```
-Origin | num_flights
--------|------------
-ATL    | 29,512
-ORD    | 23,484
-DFW    | 23,153
-DEN    | 17,340
-LAX    | 17,090
+If data does not appear in BigQuery:
 
-```
-**Analysis Results:**
-- Identified key hub airports
-- Analyzed flight distribution patterns
-- Generated actionable insights for capacity planning
+* Confirm Dataflow job status is **Running**
+* Publish another message and wait 30–60 seconds
+* Check Dataflow logs for permission or schema errors
+* Verify the correct region is used for the template
 
-## Business Impact
-- **Data Volume:** Successfully migrated and analyzed 300K+ flight records
-- **Query Performance:** Optimized SQL queries for sub-second response times on large datasets
-- **Cost Efficiency:** Implemented cloud-native solutions reducing infrastructure costs by 60%
-- **Scalability:** Designed architecture supporting terabyte-scale data growth
-  
-## Author
+---
 
-## Anasieze Ikenna - Cloud & AI Solutions Engineer
+## Outcome
+
+* A fully operational real time streaming analytics pipeline
+* Live data flowing continuously from Pub/Sub into BigQuery
+* A reproducible, cloud native architecture ready for extension
+
+---
+
+This project proves I can design, deploy, and operate real time cloud data pipelines, troubleshoot distributed systems independently, and think end to end like a cloud engineer.
+
