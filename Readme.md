@@ -1,4 +1,4 @@
-# Real Time Streaming Analytics into BigQuery
+# Real Time Oilfield Sensor Data Streaming into BigQuery
 
 **Author:** Anasieze Ikenna  
 **Role:** Cloud & AI Engineer  
