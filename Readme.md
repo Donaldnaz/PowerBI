@@ -53,7 +53,7 @@ This architecture is **serverless**, **scalable**, and **production aligned**.
 
 ---
 
-## Reproduce This Project
+## Deployment Steps
 
 ### Prerequisites
 
