@@ -1,4 +1,4 @@
-# Real Time Oilfield Sensor Data Streaming into BigQuery
+# Real Time Oilfield Telemetry Streaming into BigQuery
 
 **Author:** Anasieze Ikenna  
 **Role:** Cloud & AI Engineer  
@@ -8,45 +8,44 @@
 
 ## Project Overview
 
-This project demonstrates the design and deployment of a **real time streaming analytics pipeline** on Google Cloud. The system ingests live environmental sensor data, processes it continuously, and stores it in **BigQuery** for immediate querying and analysis.
+A real time data pipeline that streams live oilfield sensor readings from wells and production facilities into BigQuery, enabling continuous monitoring and analytics of field conditions.
 
-Instead of relying on batch jobs or manual uploads, this architecture enables **continuous data flow**, making it suitable for use cases such as IoT sensors, monitoring systems, and real time analytics dashboards.
+This system replaces batch uploads with live data ingestion, supporting modern digital oilfield operations and data driven decision making.
 
 ---
 
 ## Problem Statement
 
-A newly formed development team required a solution to:
+A newly formed development team needed a cloud native solution to:
 
-- Ingest real time temperature data from sensors  
-- Process streaming events reliably at scale  
-- Store data in an analytics ready warehouse  
-- Validate incoming data instantly  
+- Ingest real time oilfield sensor data from wells and surface facilities  
+- Process continuous telemetry streams reliably at scale  
+- Store data in an analytics ready warehouse for operational insights  
+- Validate incoming field data as it arrives  
 
-**My responsibility:**  I designed and implemented the end to end streaming pipeline using Google Cloud managed services.
+**My responsibility:**  I designed and implemented the end to end streaming telemetry pipeline using Google Cloud managed services.
 
 ---
 
 ## Tech Stack
 
-- **Cloud Storage** – temporary and staging storage for Dataflow jobs  
-- **Pub/Sub** – real time event ingestion  
-- **Dataflow** – continuous stream processing  
-- **BigQuery** – analytics storage and validation  
+- **Cloud Storage** – temporary and staging storage for Dataflow job execution 
+- **Pub/Sub** – real time ingestion of oilfield telemetry events  
+- **Dataflow** – continuous stream processing of sensor data  
+- **BigQuery** – analytics storage for querying and validation
 
----
 
 ## Architecture Overview
 
-<img width="6008" height="1708" alt="Untitled diagram-2026-01-07-231222" src="https://github.com/user-attachments/assets/9f97c291-588b-4a85-a87d-92e4f74a573f" />
+<img width="6449" height="940" alt="image" src="https://github.com/user-attachments/assets/826aff7c-f2d2-4186-9923-657e74d38332" />
 
 ### Data Flow
 
-1. Environmental sensor data is published as JSON events  
-2. Pub/Sub ingests messages in real time  
-3. Dataflow processes the streaming events continuously  
-4. BigQuery stores processed records for analytics  
-5. SQL queries validate and analyze incoming data  
+1. Oilfield sensors publish telemetry data (e.g., temperature readings) as JSON events  
+2. Pub/Sub ingests sensor messages in real time  
+3. Dataflow processes and streams telemetry continuously  
+4. BigQuery stores processed records for analytics and reporting  
+5. SQL queries validate incoming data and support operational analysis
 
 This architecture is **serverless**, **scalable**, and **production aligned**.
 
@@ -76,10 +75,10 @@ PROJECT_ID=<your-project-id>
 REGION=us-central1
 
 BUCKET_NAME=$PROJECT_ID
-DATASET_NAME=sensor_streaming
-TABLE_NAME=temperature_readings
-TOPIC_NAME=sensor-temperature-topic
-DATAFLOW_JOB_NAME=pubsub-to-bigquery-stream
+DATASET_NAME=oilfield_telemetry
+TABLE_NAME=well_temperature_readings
+TOPIC_NAME=oilfield-sensor-topic
+DATAFLOW_JOB_NAME=oilfield-telemetry-stream
 ````
 ---
 
@@ -160,7 +159,7 @@ gcloud pubsub topics publish $TOPIC_NAME \
 
 ```sql
 SELECT *
-FROM `PROJECT_ID.sensor_streaming.temperature_readings`
+FROM `PROJECT_ID.oilfield_telemetry.well_temperature_readings`
 LIMIT 50;
 ```
 
@@ -181,11 +180,9 @@ If data does not appear in BigQuery:
 
 ## Outcome
 
-* A fully operational real time streaming analytics pipeline
-* Live data flowing continuously from Pub/Sub into BigQuery
-* A reproducible, cloud native architecture ready for extension
-
+* A fully operational real time oilfield telemetry streaming pipeline
+* Live sensor data flowing continuously from Pub/Sub into BigQuery
+* A reproducible, cloud native architecture suitable for digital oilfield analytics
 ---
 
-This project proves I can design, deploy, and operate real time cloud data pipelines, troubleshoot distributed systems independently, and think end to end like a cloud engineer.
-
+This project demonstrates how real time oilfield telemetry can be ingested, processed, and analyzed using cloud native streaming pipelines, enabling modern oil and gas operations to gain faster operational insights and improve decision making.
