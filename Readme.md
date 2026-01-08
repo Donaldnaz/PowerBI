@@ -148,7 +148,12 @@ Wait until the job status is **Running**.
 
 ```bash
 gcloud pubsub topics publish $TOPIC_NAME \
- --message='{"oil_field": "Hibernia", "well_id": "P_15", "temperature": 115.5}'
+  --message='{
+    "storage_site": "Hibernia_CCS",
+    "injection_well": "INJ_03",
+    "co2_injection_temperature_f": 121.4,
+    "co2_injection_pressure_psi": 2950
+  }'
 ```
 ---
 
@@ -161,7 +166,7 @@ SELECT
   co2_injection_pressure_psi,
   timestamp
 FROM `PROJECT_ID.ccs_monitoring.co2_injection_telemetry`
-WHERE injection_well = 'P_15'
+WHERE injection_well = 'INJ_03'
 ORDER BY timestamp DESC
 LIMIT 10;
 ```
