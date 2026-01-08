@@ -28,7 +28,7 @@ def run():
     # BigQuery schema
     schema = {
         'fields': [
-            {'name': 'sensor_id', 'type': 'STRING'},
+            {'name': 'well_id', 'type': 'STRING'},
             {'name': 'temperature', 'type': 'FLOAT'},
             {'name': 'timestamp', 'type': 'TIMESTAMP'}
         ]
