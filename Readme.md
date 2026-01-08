@@ -37,7 +37,7 @@ A newly formed development team needed a cloud native solution to:
 
 ## Architecture Overview
 
-<img width="6449" height="940" alt="image" src="https://github.com/user-attachments/assets/826aff7c-f2d2-4186-9923-657e74d38332" />
+<img width="6449" height="940" alt="image" src="https://github.com/user-attachments/assets/87036e4a-d758-48de-8a01-dfe87a718c76" />
 
 ### Data Flow
 
