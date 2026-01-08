@@ -35,7 +35,7 @@ My responsibility: I designed and implemented the end to end CCS telemetry strea
 
 ## Architecture Overview
 
-<img width="2437" height="1355" alt="image" src="https://github.com/user-attachments/assets/b6d31bb5-23a3-41de-b122-e90eb4179a45" />
+<img width="5437" height="2355" alt="image" src="https://github.com/user-attachments/assets/882e7b7a-9eb5-406b-b335-a2324bb8c7b1" />
 
 ### Data Flow
 
