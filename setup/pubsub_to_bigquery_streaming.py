@@ -1,8 +1,10 @@
 """
-Streaming Pub/Sub to BigQuery Pipeline
+Real Time Well Sensor Data Streaming into BigQuery
 
-This Dataflow pipeline reads live JSON messages from a Pub/Sub topic, converts them into structured records, and continuously writes them
-to a BigQuery table for real time analytics.
+This Dataflow pipeline ingests live oilfield sensor data such as
+wellhead temperature and facility telemetry from Pub/Sub,
+processes it in real time, and stores it in BigQuery for
+operational monitoring and analytics.
 """
 
 import json
