@@ -23,8 +23,7 @@ A newly formed development team required a solution to:
 - Store data in an analytics ready warehouse  
 - Validate incoming data instantly  
 
-**My responsibility:**  
-I designed and implemented the end to end streaming pipeline using Google Cloud managed services.
+**My responsibility:**  I designed and implemented the end to end streaming pipeline using Google Cloud managed services.
 
 ---
 
