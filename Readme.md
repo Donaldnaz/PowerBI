@@ -205,4 +205,4 @@ In real CCS deployments, field sensors communicate through industrial protocols 
 
 ---
 
-This project demonstrates how a real time CCS telemetry pipeline on Google Cloud streams live injection well data into BigQuery for continuous monitoring, analytics, and operational insight, combining oil and gas domain knowledge with cloud native data engineering.
+This project demonstrates my ability to design and implement a real time CCS telemetry pipeline on Google Cloud streams live injection well data into BigQuery for continuous monitoring, analytics, and operational insight, combining my oil and gas domain knowledge with cloud native data engineering.
