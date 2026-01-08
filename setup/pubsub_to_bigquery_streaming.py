@@ -42,7 +42,7 @@ def run():
             )
             | "Parse JSON" >> beam.ParDo(ParseJson())
             | "Write to BigQuery" >> WriteToBigQuery(
-                table="PROJECT_ID:dataset.temperature_data",
+                table="PROJECT_ID:dataset.well_temperature_readings",
                 schema=schema,
                 write_disposition=beam.io.BigQueryDisposition.WRITE_APPEND
             )
