@@ -197,6 +197,9 @@ If data does not appear in BigQuery:
 * Live CO₂ injection telemetry streaming continuously from Pub/Sub into BigQuery
 * A reproducible, cloud native architecture suitable for carbon storage monitoring, operational oversight, and regulatory analysis
 
+## IoT
+In real CCS deployments, field sensors communicate through industrial protocols to an edge gateway. For this project, the gateway layer is simulated by publishing structured telemetry messages into Pub/Sub, allowing realistic design and testing of the cloud ingestion and analytics pipeline.
+
 ---
 
-This project demonstrates how real time CCS telemetry pipeline on Google Cloud streams live injection well data into BigQuery for continuous monitoring, analytics, and operational insight, combining oil and gas domain knowledge with cloud native data engineering.
+This project demonstrates how a real time CCS telemetry pipeline on Google Cloud streams live injection well data into BigQuery for continuous monitoring, analytics, and operational insight, combining oil and gas domain knowledge with cloud native data engineering.
