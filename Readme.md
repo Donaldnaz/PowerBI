@@ -5,6 +5,7 @@
 **Platform:** Google Cloud Platform  
 
 ---
+
 ## Project Overview
 
 A real time data pipeline that streams live oilfield sensor readings from wells and production facilities into BigQuery, enabling continuous monitoring and analytics of field conditions.
@@ -25,6 +26,7 @@ A newly formed development team needed a cloud native solution to:
 **My responsibility:**  I designed and implemented the end to end streaming telemetry pipeline using Google Cloud managed services.
 
 ---
+
 ## Tech Stack
 
 - **Cloud Storage** – temporary and staging storage for Dataflow job execution 
