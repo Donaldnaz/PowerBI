@@ -38,7 +38,7 @@ A newly formed development team required a solution to:
 
 ## Architecture Overview
 
-<img width="1665" height="2531" alt="image" src="https://github.com/user-attachments/assets/65d4bbc9-661c-44be-b606-9db80921ce5a" />
+<img width="6008" height="1708" alt="Untitled diagram-2026-01-07-231222" src="https://github.com/user-attachments/assets/9f97c291-588b-4a85-a87d-92e4f74a573f" />
 
 ### Data Flow
 
