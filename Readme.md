@@ -39,7 +39,7 @@ I designed and implemented the end to end streaming pipeline using Google Cloud 
 
 ## Architecture Overview
 
-<img width="665" height="831" alt="image" src="https://github.com/user-attachments/assets/65d4bbc9-661c-44be-b606-9db80921ce5a" />
+<img width="1665" height="1831" alt="image" src="https://github.com/user-attachments/assets/65d4bbc9-661c-44be-b606-9db80921ce5a" />
 
 ### Data Flow
 
