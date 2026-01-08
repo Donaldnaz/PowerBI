@@ -68,7 +68,6 @@ This architecture is **serverless**, **scalable**, and **production aligned**.
   - Dataflow  
   - BigQuery  
   - Cloud Storage
-  - 
 ---
 
 ### Configuration Variables
