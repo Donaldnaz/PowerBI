@@ -40,7 +40,7 @@ A newly formed development team needed a cloud native solution to:
 
 ### Data Flow
 
-1. Oilfield sensors publish telemetry data (e.g., temperature readings) as JSON events  
+1. Oilfield sensors publish sensor data (e.g., temperature readings) as JSON events  
 2. Pub/Sub ingests sensor messages in real time  
 3. Dataflow processes and streams telemetry continuously  
 4. BigQuery stores processed records for analytics and reporting  
