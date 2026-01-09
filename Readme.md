@@ -105,7 +105,7 @@ gsutil mb gs://$BUCKET_NAME/
 Create dataset:
 
 ```bash
-bq mk --location=US $DATASET_NAME
+bq mk $DATASET_NAME
 ```
 
 Create table:
@@ -159,12 +159,14 @@ gcloud pubsub topics publish $TOPIC_NAME \
 ```
 ---
 
-### Validate in BigQuery - Detect high pressure events
+### Validate in BigQuery - Latest conditions per well
 
 ```sql
 SELECT *
 FROM `PROJECT_ID.ccs_monitoring.co2_injection_telemetry`
-WHERE co2_injection_pressure_psi > 3200;
+WHERE injection_well = 'INJ_03'
+ORDER BY timestamp DESC
+LIMIT 3;
 
 ```
 
