@@ -95,8 +95,7 @@ gcloud services enable \
 ### Create Cloud Storage Bucket
 
 ```bash
-gsutil mb -l $REGION gs://$BUCKET_NAME
-gsutil mkdir gs://$BUCKET_NAME/temp
+gsutil mb gs://$BUCKET_NAME/
 ```
 
 ---
