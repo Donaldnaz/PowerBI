@@ -114,13 +114,8 @@ Create table:
 ```bash
 bq mk \
   --table \
-  $DATASET_NAME.$TABLE_NAME \
-  storage_site:STRING,\
-  injection_well:STRING,\
-  co2_injection_temperature_f:FLOAT,\
-  co2_injection_pressure_psi:FLOAT,\
-  co2_injection_rate_tpd:FLOAT,\
-  timestamp:TIMESTAMP
+  --schema storage_site:STRING,injection_well:STRING,co2_injection_temperature_f:FLOAT,co2_injection_pressure_psi:FLOAT,co2_injection_rate_tpd:FLOAT,timestamp:TIMESTAMP \
+  $DATASET_NAME.$TABLE_NAME
 ```
 
 ---
