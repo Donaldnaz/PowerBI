@@ -1,10 +1,9 @@
 """
 Real Time Carbon Storage Monitoring Pipeline into BigQuery
 
-This Dataflow pipeline ingests live Carbon Capture and Storage (CCS)
-telemetry such as CO₂ injection temperature and pressure from Pub/Sub,
-processes it in real time, and stores it in BigQuery for continuous
-monitoring, analytics, and operational oversight.
+This Dataflow pipeline ingests live Carbon Capture and Storage (CCS) telemetry such as CO₂ injection temperature and pressure from Pub/Sub,
+processes it in real time, and stores it in BigQuery for continuous monitoring, analytics, and operational oversight.
+
 """
 
 import json
@@ -23,7 +22,7 @@ class ParseJson(beam.DoFn):
         record.setdefault("timestamp", beam.utils.timestamp.Timestamp.now().to_rfc3339())
 
         yield record
-
+        
 
 def run():
     # Configure pipeline for streaming execution
@@ -47,13 +46,13 @@ def run():
             pipeline
             # Read real time CCS telemetry events from Pub/Sub
             | "Read from Pub/Sub" >> ReadFromPubSub(
-                topic="projects/PROJECT_ID/topics/ccs-telemetry-topic"
+                topic="projects/$PROJECT_ID/topics/ccs-telemetry-topic"
             )
             # Parse incoming JSON messages into structured records
             | "Parse JSON" >> beam.ParDo(ParseJson())
             # Write telemetry records into BigQuery for analytics
             | "Write to BigQuery" >> WriteToBigQuery(
-                table="PROJECT_ID:ccs_monitoring.co2_injection_telemetry",
+                table="$PROJECT_ID:ccs_monitoring.co2_injection_telemetry",
                 schema=schema,
                 write_disposition=beam.io.BigQueryDisposition.WRITE_APPEND,
                 create_disposition=beam.io.BigQueryDisposition.CREATE_NEVER,
