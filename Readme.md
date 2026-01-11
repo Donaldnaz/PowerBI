@@ -133,10 +133,8 @@ gcloud pubsub topics create $TOPIC_NAME
 gcloud dataflow jobs run $DATAFLOW_JOB_NAME \
   --gcs-location gs://dataflow-templates-$REGION/latest/PubSub_to_BigQuery \
   --region $REGION \
-  --parameters \
-inputTopic=projects/$PROJECT_ID/topics/$TOPIC_NAME,\
-outputTableSpec=$PROJECT_ID:$DATASET_NAME.$TABLE_NAME,\
-tempLocation=gs://$BUCKET_NAME/temp
+  --staging-location gs://$BUCKET_NAME/temp \
+  --parameters inputTopic=projects/$PROJECT_ID/topics/$TOPIC_NAME,outputTableSpec=$PROJECT_ID:$DATASET_NAME.$TABLE_NAME
 ```
 
 Wait until the job status is **Running**.
