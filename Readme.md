@@ -18,7 +18,7 @@ Enterprise-grade data engineering project demonstrating cloud-native database ma
 ```
 sql/
 ├── create_table.sql    # Database schema definition
-├── 201501.csv.zip          # Sample flight data
+├── 201501.csv.zip      # Sample flight data
 ├── Guide.pdf           # Setup guide
 └── README.md           # Project documentation
 ```
