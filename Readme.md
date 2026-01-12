@@ -11,11 +11,8 @@ Enterprise-grade data engineering project demonstrating cloud-native database ma
 
 ## Architecture
 
-```
-Cloud Storage (CSV) → Cloud SQL (PostgreSQL) → SQL Analytics → Business Insights
-         ↓                      ↓                    ↓
-    ETL Pipeline         Data Warehouse         Dashboards
-```
+<img width="6633" height="1683" alt="image" src="https://github.com/user-attachments/assets/511021dc-1119-4eef-a9be-b6ab890bb452" />
+
 
 ### Project Structure
 ```
